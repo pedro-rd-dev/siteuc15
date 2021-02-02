@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <h1 id="h1Demo">???????????</h1>
+
+    <h1 id="h2Demo">???????????</h1>
+
+    <h1 id="h3Demo">???????????</h1>
+
+
+    <button id="primeiro" type="button" onclick='document.getElementById("h1Demo").innerHTML = "JAVASCRIPT INLINE"'>INLINE</button>
+
+    <button id="segundo" type="button">INCORPORADO</button>
+
+    <button id="terceiro" type="button">EXTERNO</button>
+
+    <script>
+        var button = document.getElementById('segundo');
+
+        button.onclick = function() {
+            document.getElementById("h2Demo").innerHTML = "JAVASCRIPT INCORPORADO"
+        }
+    </script>
+
+    <script src="js/tiposJS.js"></script>
+
+</body>
+
+</html>
