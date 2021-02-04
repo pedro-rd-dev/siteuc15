@@ -1,11 +1,9 @@
 //ATRIBUINDO VALOR À VARIAVEL
 //TIPO NOME = VALOR
 
-
-var primeiroNumero = 2;
-var segundoNumero = 4;
-/*
-var resultado;
+let primeiroNumero = 2;
+let segundoNumero = 4;
+let resultado;
 
 resultado = primeiroNumero + segundoNumero;
 console.log("SOMA: " + resultado)
@@ -19,56 +17,38 @@ console.log("DIVISAO: " + resultado)
 resultado = primeiroNumero * segundoNumero;
 console.log("MULTIPLICACAO: " + resultado)
 
-var media = (primeiroNumero + segundoNumero )/2;
+let media = (primeiroNumero + segundoNumero )/2;
+console.log("Média: " + media)
 
-
-var idade = 33;
-var nome = "pedro"
-
-console.log("A idade de " + nome + " é " + idade + " anos")
+let idade = 33;
+let nome = "pedro";
+console.log("A idade de " + nome + " é " + idade + " anos");
 
 
 //ALTERANDO VALOR DE VARIÁVEL
-var Idade_Pai = idade + 15;
+let Idade_Pai = idade + 15;
+console.log("Idade pai: " + Idade_Pai);
 
-console.log("Idade pai: " + Idade_Pai)
 
-*/
 //ARRAYS
+let listaDeNomes = ["ORNINTORRINCO", 45, "murilo"];
+console.log(listaDeNomes);
 
-/*
-var listaDeNomes = ["ORNINTORRINCO", 45, "murilo"]
-
-console.log(listaDeNomes)
-
-listaDeNomes[1] = 100
-console.log(listaDeNomes)
-
-*/
+listaDeNomes[1] = 100;
+console.log(listaDeNomes);
 
 
-var computador = { cor: "preto", modelo: "lenovo", processador: "intel" }
-
+let computador = { cor: "preto", modelo: "lenovo", processador: "intel" };
 console.log(computador);
-
 console.log(computador.cor);
 console.log(computador.modelo);
 console.log(computador.processador);
 
 
-
-
-
-
-/*
 //LISTAS
-var listaIdades = { idadePai: 45, idadeFilho: 20, idadeMae: 44 }
-
-console.log(listaIdades)
-
-listaIdades.idadeFilho = 100
-
-console.log("Idade pai: " + listaIdades.idadePai)
-console.log("Idade filho: " + listaIdades.idadeFilho)
-console.log("Idade mae: " + listaIdades.idadeMae)
-*/
+let listaIdades = { idadePai: 45, idadeFilho: 20, idadeMae: 44 };
+console.log(listaIdades);
+listaIdades.idadeFilho = 100;
+console.log("Idade pai: " + listaIdades.idadePai);
+console.log("Idade filho: " + listaIdades.idadeFilho);
+console.log("Idade mae: " + listaIdades.idadeMae);

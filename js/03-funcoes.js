@@ -23,4 +23,3 @@ console.log("MULTIPLICACAO: "+ resultadoDivisao)
 
 var resultadoMultiplicacao = divisao(8,4)
 console.log("DIVISAO: "+ resultadoMultiplicacao)
-
