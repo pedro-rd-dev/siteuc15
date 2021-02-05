@@ -7,13 +7,58 @@
 
 //OBS O CÓDIGO DEVE MOSTRAR AO USUÁRIO O MOTIVO PELO QUAL NÃO PODE SER CADASTRADO
 
+
 console.clear();
-var candidato = { nome: "Antonio", atestadoDeAntecedendes: true, idade: 54, nacionalidade: "Brasileiro" };
-console.log("Nome do candidato: " + candidato.nome);
-console.log("Status do atestado de antecedentes criminais, sendo válido igual a true e inválido igual a false: " + candidato.atestadoDeAntecedendes);
-console.log("Idade do candidadto: " + candidato.idade);
-console.log("Nacionalidade do candidato: " + candidato.nacionalidade);
-console.log("");
+
+function verificarAntecedentes(objeto) {
+    if (objeto.atestadoDeAntecedendes) {
+        console.log("A pessoa possui atestado de antecedentes");
+        return true;
+    }
+    console.log("A pessoa não possui atestado de antecedentes");
+    return false;
+}
+
+function verificarMaioridade(pessoa) {
+    if (pessoa.idade > 18) {
+        console.log("A pessoa possui mais de 18 anos");
+        return true;
+    }
+    console.log("A pessoa não possui mais de 18 anos");
+    return false;
+}
+
+function verificarNacionalidade(pessoa) {
+    if (pessoa.nacionalidade === "Brasileiro" || "Argentino") {
+        console.log("A pessoa é brasileira ou argentina");
+        return true;
+    }
+    console.log("A pessoa não é brasileira ou argentina");
+    return false;
+}
+
+
+
+
+var candidato = { nome: "Antonio", atestadoDeAntecedendes: true, idade: 17, nacionalidade: "Brasileiro" };
+
+
+if (verificarAntecedentes(candidato)) {
+    if (verificarMaioridade(candidato)) {
+        if (verificarNacionalidade(candidato)) {
+            console.log("CANDIDATO APROVADO")
+        }
+    }
+
+}
+
+
+
+
+
+
+/*
+
 
 if (candidato.atestadoDeAntecedendes == true) {
     if (candidato.idade >= 18) {
@@ -32,3 +77,5 @@ if (candidato.idade < 18) {
 if (candidato.nacionalidade != "Brasileiro" && candidato.nacionalidade != "Argentino") {
     console.log("Candidato rejeitado por questões de nacionalidade incompatível: " + candidato.nacionalidade + ".");
 }
+
+*/
