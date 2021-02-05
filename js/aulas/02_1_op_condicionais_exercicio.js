@@ -38,8 +38,6 @@ function verificarNacionalidade(pessoa) {
 }
 
 
-
-
 var candidato = { nome: "Antonio", atestadoDeAntecedendes: true, idade: 17, nacionalidade: "Brasileiro" };
 
 
@@ -49,8 +47,8 @@ if (verificarAntecedentes(candidato)) {
             console.log("CANDIDATO APROVADO")
         }
     }
-
 }
+
 
 
 

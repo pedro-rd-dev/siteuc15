@@ -7,7 +7,7 @@ class Retangulo {
     get area(){
         return this.altura * this.largura + "m²"
     }
-};
+}
 
 
 module.exports = Retangulo
