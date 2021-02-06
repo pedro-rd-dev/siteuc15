@@ -4,6 +4,12 @@ function cadastrar() {
     var campoNaturalidade = verificarTexto('naturalidade');
     var campoAntecedentesCriminais = verificarSeletor('antecedentesCriminais');
 
+    console.log(campoNome);
+    console.log(campoIdade);
+    console.log(campoNaturalidade);
+    console.log(campoAntecedentesCriminais);
+
+
     var validacao = false;
     validacao = validarIdade(campoIdade);
     validacao = validarNaturalidade(campoNaturalidade);
@@ -15,16 +21,16 @@ function cadastrar() {
 }
 
 function validarIdade(idade) {
-    if (idade.textContent >= 18) {
+    if (idade >= 18) {
         editarTexto('validacaoIdade', "")
         return true
     }
-    editarTexto('validacaoIdade', "Idade inferior a 18 anos")
+    editarTexto('validacaoIdade', idade + " É inferior a 18 anos: ")
     return false;
 }
 
 function validarNaturalidade(naturalidade) {
-    if (naturalidade.textContent === "brasileiro" || naturalidade.textContent === "argentino") {
+    if (naturalidade === "brasileiro" || naturalidade === "argentino") {
         editarTexto('validacaoNaturalidade', "")
         return true
     }

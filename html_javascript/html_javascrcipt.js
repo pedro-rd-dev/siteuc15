@@ -6,7 +6,7 @@ function trocarTitulo() {
 }
 
 function verificarTitulo() {
-    console.log(titulo.textContent);
+    console.log(titulo.value);
 }
 
 function alinharTexto() {
@@ -22,7 +22,7 @@ function editarTexto(id, mensagem) {
 }
 
 function verificarTexto(id) {
-    return document.getElementById(id).textContent;
+    return document.getElementById(id).value;
 }
 
 function verificarSeletor(id) {
