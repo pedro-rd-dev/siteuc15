@@ -9,14 +9,12 @@ function cadastrar() {
     console.log(campoNaturalidade);
     console.log(campoAntecedentesCriminais);
 
-
-    var validacao = false;
-    validacao = validarIdade(campoIdade);
-    validacao = validarNaturalidade(campoNaturalidade);
-    validacao = validarAntecedentes(campoAntecedentesCriminais);
-
-    if (validacao) {
-        console.log("O cadastro pode continuar")
+    if(validarIdade(campoIdade)){
+        if(validarNaturalidade(campoNaturalidade)){
+            if(validarAntecedentes(campoAntecedentesCriminais)){
+                console.log("O cadastro pode continuar")
+            }
+        }
     }
 }
 
