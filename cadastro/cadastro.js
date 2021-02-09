@@ -9,13 +9,14 @@ function cadastrar() {
     console.log(campoNaturalidade);
     console.log(campoAntecedentesCriminais);
 
-    if(validarIdade(campoIdade)){
-        if(validarNaturalidade(campoNaturalidade)){
-            if(validarAntecedentes(campoAntecedentesCriminais)){
-                console.log("O cadastro pode continuar")
+    if (validarIdade(idade)) {
+        if (validarNaturalidade(naturalidade)) {
+            if (validarAntecedentes(antecedentes)) {
+                console.log("OK TUDO CERTO")
             }
         }
     }
+
 }
 
 function validarIdade(idade) {
