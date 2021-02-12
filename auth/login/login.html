@@ -42,16 +42,20 @@
                                 <label for="exampleInputPassword1" class="form-label">Password</label>
                                 <input type="password" class="form-control" id="exampleInputPassword1">
                             </div>
-                            <div class="mb-3">
-                                <div id="alertaEmail" class="text-danger text-center"></div>
-                            </div>
-
 
                         </form>
                         <!-- foi usado para poder esticar o botão-->
                         <div class="d-grid gap-1">
 
-                            <button onclick="login()" type="submit" class="btn button-auth">Login</button>
+                            <button id="loginButton" onclick="login()" type="submit" class="btn button-auth">
+                                <span id="textoLogando" class="sr-only">Logando...</span>
+                                <span id="textoLogin" class="sr-only">Login</span>
+
+                            </button>
+                        </div>
+                        <hr>
+                        <div class="mb-3">
+                            <div id="alertaEmail" class="text-danger text-center"></div>
                         </div>
 
                     </div>
@@ -69,9 +73,8 @@
 
     </div>
 
-
-    <script src="../js/jquery-3.5.1.min.js"></script>
-    <script src="../js/validacao.js" async defer></script>
+    <script src="../../js/jquery-3.5.1.min.js"></script>
+    <script src="../../js/validacao.js" async defer></script>
     <script src="login.js" async defer></script>
 </body>
 

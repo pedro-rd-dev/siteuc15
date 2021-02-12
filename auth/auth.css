@@ -8,7 +8,7 @@
     background: #F9F9FB;
     border-radius: 10px;
     padding: 10px;
-    width: 25rem;
+    width: 27rem;
 }
 
 .button-auth {
@@ -17,7 +17,9 @@
     font-size: 20px;
     padding: 10px;
     color: white;
+
 }
+
 
 .texto-auth {
     color: #664986;
@@ -27,3 +29,4 @@
     padding: 20px;
     font-size: 18px;
 }
+
