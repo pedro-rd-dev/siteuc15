@@ -40,23 +40,17 @@ function logar(){
             console.log(objetoToken)
 
             /////////////////////ARMAZENAMENTO//////////////////////////
-            //TRANSFORMANDO O OBJETO EM UM JSON (STRING)
-            JsonToken = JSON.stringify(objetoToken);
+            ///////////////////preparando token/////////////////////////
+            const key = "Token " + objetoToken.key;
 
             //SALVANDO O TOKEN NO LOCAL STORAGE DO NAVEGADOR
-            window.localStorage.setItem("Token",JsonToken);
+            window.localStorage.setItem("Token",key);
 
-            //////////////////////////LEITURA//////////////////////////
-            //RECUPERANDO O JSON (STRING) DO LOCAL STORAGE DO NAVEGADOR
-            var jsonTokenStorage = window.localStorage.getItem("Token");
-            console.log("jsonTokenStorage: " +jsonTokenStorage)
-
-            //TRANSFORMANDO O JSON EM UM OBJETO
-            var objetoTokenStorage = JSON.parse(jsonTokenStorage);
-            console.log(objetoTokenStorage)
 
             objetotextoLogando.style.display = 'none';
             objetoTextoLogin.style.display = 'inline';
+
+            window.location.href ="../../tarefas/tarefas.html"
 
         },
         error: function (error){
