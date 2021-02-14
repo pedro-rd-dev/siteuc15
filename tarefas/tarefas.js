@@ -22,15 +22,15 @@ class Tarefa {
 
     get minhasTarefas() {
         $.ajax({
-            url: "http://escolarapp2.herokuapp.com/tarefas/",
+            url: "http://escolarapp2.herokuapp.com/eventos/",
             contentType: 'application/json',
             cache: false,
             method: 'GET',
             dataType: 'json',
             headers: {"Authorization": window.localStorage.getItem('Token')},
             success: function (resposta) {
-                console.log(resposta)
-                popularTabela(resposta);
+                //console.log(resposta)
+                popularTabela('table',resposta);
             },
             error: function (resposta){
                 console.log(resposta)
@@ -40,33 +40,58 @@ class Tarefa {
     }
 }
 //module.exports = Tarefa
-console.log(window.localStorage.getItem('Token'));
+//console.log(window.localStorage.getItem('Token'));
 
 var tarefa = new Tarefa();
 tarefa.minhasTarefas;
 
 
-function popularTabela(respostas) {
-    var objetoTabela = document.getElementById("table");
+function popularTabela(id_tabela,respostas) {
 
+    var objetoTabela = document.getElementById(id_tabela);
     var header = objetoTabela.createTHead();
-    var headerRow = header.insertRow(0)
-    var headerCol1 = headerRow.insertCell(0)
-    var headerCol2 = headerRow.insertCell(1)
-    headerCol1.innerHTML  = "coluna 1"
-    headerCol2.innerHTML  = "coluna 2"
+    var headerRow = header.insertRow()
 
+    for (var resp in respostas){
+        var atributos = Object.keys(respostas[resp]);
+        for (atributo in atributos){
+            //console.log(atributos[atributo])
+            var headerCol = headerRow.insertCell(atributo)
+            headerCol.innerHTML = atributos[atributo]
+        }
+        var headerColEditar = headerRow.insertCell()
 
-    for (var resposta in respostas){
-        console.log(respostas[resposta])
-        var linha = objetoTabela.insertRow(resposta +1)
-        var coluna = linha.insertCell(0)
-        var coluna2 = linha.insertCell(1)
+        headerColEditar.innerHTML = "Editar"
+        var headerColDeletar = headerRow.insertCell()
 
-        coluna.innerHTML = respostas[resposta].descricao;
-        coluna2.innerHTML = respostas[resposta].realizada;
+        headerColDeletar.innerHTML = "Deletar"
+
+        break;
     }
 
+    for (var resposta in respostas){
+        //console.log(respostas[resposta])
+        var linha = objetoTabela.insertRow()
+
+        var valores = Object.values(respostas[resposta]);
+        var valoresReversos = valores.reverse();
+
+        console.log(valoresReversos)
+
+        for(var valor in valoresReversos){
+            var coluna = linha.insertCell(valor)
+            coluna.innerHTML = valoresReversos[valor]
+        }
+        var colunaEditar = linha.insertCell()
+
+        colunaEditar.innerHTML = "<button type=\"button\" class=\"btn btn-outline-light\">Light</button>"
+        var colunaDeletar = linha.insertCell()
+
+        colunaDeletar.innerHTML = "<button type=\"button\" class=\"btn btn-outline-light\">Light</button>"
+
+
+
+    }
+
+
 }
-
-
