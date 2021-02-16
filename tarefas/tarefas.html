@@ -10,7 +10,7 @@
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../css/navbar.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-
+    <link rel="stylesheet" href="../tabelas/tabelas.css">
 
 </head>
 <body>
@@ -101,7 +101,7 @@
             </div>
         </nav>
         <div class="container">
-            <div class="table-responsive">
+            <div class="table">
 
 
                 <table id="table" class="table">
@@ -119,7 +119,7 @@
 
 <script src="../tabelas/tabelas.js"> </script>
 
-<script src="tarefas.js"></script>
+<script src="tarefas.js" onload="getListaObjetos('http://escolarapp2.herokuapp.com/tarefas/','table')"></script>
 
 <script src="../sidebar/sidebar.js"></script>
 

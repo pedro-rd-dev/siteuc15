@@ -1,47 +1,49 @@
-class Tarefa {
-    constructor(realizada, descricao) {
-        this._descricao = descricao;
-        this._realizada = realizada;
-    }
+var url = "";
+var idRow = "";
 
-    get realizada() {
-        return this._realizada;
-    }
+function getListaObjetos(urlRecebida,id_table){
+    url = urlRecebida;
+    $.ajax({
+        url: url,
+        contentType: 'application/json',
+        cache: false,
+        method: 'GET',
+        dataType: 'json',
+        headers: {"Authorization": window.localStorage.getItem('Token')},
+        success: function (resposta) {
+            //console.log(resposta)
+            popularTabela(id_table,resposta);
+        },
+        error: function (resposta){
+            console.log(resposta)
+        }
 
-    set realizada(value) {
-        this._realizada = value;
-    }
-
-    get descricao() {
-        return this._descricao;
-    }
-
-    set descricao(value) {
-        this._descricao = value;
-    }
-
-    get minhasTarefas() {
-        $.ajax({
-            url: "http://escolarapp2.herokuapp.com/eventos/",
-            contentType: 'application/json',
-            cache: false,
-            method: 'GET',
-            dataType: 'json',
-            headers: {"Authorization": window.localStorage.getItem('Token')},
-            success: function (resposta) {
-                //console.log(resposta)
-                popularTabela('table',resposta);
-            },
-            error: function (resposta){
-                console.log(resposta)
-            }
-
-        });
-    }
+    });
 }
-//module.exports = Tarefa
-//console.log(window.localStorage.getItem('Token'));
+function deletarObjeto(id){
+    idRow= id;
+    $.ajax({
+        url: url + idRow,
+        contentType: 'application/json',
+        cache: false,
+        method: 'DELETE',
+        dataType: 'json',
+        headers: {"Authorization": window.localStorage.getItem('Token')},
+        success: function (resposta) {
+            //console.log(resposta)
 
-var tarefa = new Tarefa();
-tarefa.minhasTarefas;
+            var row = document.getElementById(idRow);
+            row.parentNode.removeChild(row);
+
+        },
+        error: function (resposta){
+            console.log(resposta)
+        }
+
+    });
+
+}
+function editarObjeto(){
+
+}
 

@@ -1,7 +1,10 @@
 function popularTabela(id_tabela,respostas) {
 
+
     var objetoTabela = document.getElementById(id_tabela);
     var header = objetoTabela.createTHead();
+
+
     var headerRow = header.insertRow()
 
     for (var resp in respostas){
@@ -21,25 +24,49 @@ function popularTabela(id_tabela,respostas) {
         break;
     }
 
+    var tbody = document.createElement("tbody");
+    objetoTabela.append(tbody);
+
+
     for (var resposta in respostas){
         //console.log(respostas[resposta])
-        var linha = objetoTabela.insertRow()
+        var linha = tbody.insertRow();
 
-        var valores = Object.values(respostas[resposta]);
+
+        console.log(respostas[resposta])
+
+        var valores = Object.values(respostas[resposta]).reverse();
+        console.log(valores)
         var valoresReversos = valores.reverse();
 
         console.log(valoresReversos)
+
+        for(var valorid in valoresReversos){
+            linha.id =  valoresReversos[valorid]
+            break
+        }
+
 
         for(var valor in valoresReversos){
             var coluna = linha.insertCell(valor)
             coluna.innerHTML = valoresReversos[valor]
         }
+
         var colunaEditar = linha.insertCell()
 
-        colunaEditar.innerHTML = "<button type=\"button\" class=\"btn btn-warning\">Editar</button>"
+        colunaEditar.innerHTML = "<button type=\"button\" class=\"btn btn-warning\"'>Editar</button>"
         var colunaDeletar = linha.insertCell()
 
-        colunaDeletar.innerHTML = "<button type=\"button\" class=\"btn btn-danger\">Deletar</button>"
+
+        id = respostas[resposta].id;
+
+        console.log(id);
+
+
+        colunaDeletar.innerHTML = "<button type = \"button\" class = \"btn btn-danger\" onClick = \"deletarObjeto("+id+")\">Deletar </button>"
+
+
+
 
 
 
