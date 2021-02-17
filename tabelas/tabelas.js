@@ -54,7 +54,8 @@ function popularTabela(id_tabela,respostas) {
 
         var colunaEditar = linha.insertCell()
 
-        colunaEditar.innerHTML = "<button type=\"button\" class=\"btn btn-warning\"'>Editar</button>"
+        colunaEditar.innerHTML = "<button type=\"button\" class=\"btn btn-warning\" data-toggle=\"modal\" data-target=\"#exampleModal\">Editar</button>"
+
         var colunaDeletar = linha.insertCell()
 
 
