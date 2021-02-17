@@ -118,7 +118,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -127,12 +127,11 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                ...
+            <div id="modal-body" class="modal-body">
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Sair</button>
+                <button type="button" class="btn btn-primary">Salvar</button>
             </div>
         </div>
     </div>
@@ -145,7 +144,7 @@
 
 <script src="../tabelas/tabelas.js"> </script>
 
-<script src="tarefas.js" onload="getListaObjetos('http://escolarapp2.herokuapp.com/tarefas/','table')"></script>
+<script src="tarefas.js" onload="getListaObjetos('https://escolarapp2.herokuapp.com/tarefas/','table')"></script>
 
 <script src="../sidebar/sidebar.js"></script>
 

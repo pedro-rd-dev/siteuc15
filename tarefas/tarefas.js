@@ -1,5 +1,6 @@
 var url = "";
 var idRow = "";
+var objetoGlobal;
 
 function getListaObjetos(urlRecebida,id_table){
     url = urlRecebida;
@@ -43,7 +44,28 @@ function deletarObjeto(id){
     });
 
 }
-function editarObjeto(){
+function getObjectById(id){
+    console.log(url + id)
+    $.ajax({
+        async: false,
+        url: url + id,
+        contentType: 'application/json',
+        cache: false,
+        method: 'GET',
+        dataType: 'json',
+        headers: {"Authorization": window.localStorage.getItem('Token')},
+        success: function (resposta) {
 
+            objetoGlobal = resposta;
+
+        },
+        error: function (resposta){
+            console.log("erro: "+resposta)
+
+            objetoGlobal = resposta;
+
+        }
+
+    });
 }
 
