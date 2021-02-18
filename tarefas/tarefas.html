@@ -60,24 +60,35 @@
 
 
         </ul>
+
+
     </nav>
 
     <!-- Page Content Holder -->
     <div id="content">
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
+            <div class="container">
 
                 <button type="button" id="sidebarCollapse" class="navbar-btn">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
-                <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fas fa-align-justify"></i>
-                </button>
+
+
+                <div class="btn-group dropleft">
+                    <a type="button" id="dropdownMenu2" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" >
+                        <i class="fas fa-user-circle h2"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <button class="dropdown-item" type="button" onclick="logoffApi()">Sair</button>
+                    </div>
+                </div>
+
+
+
 
                 <!--
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -109,12 +120,10 @@
             </div>
 
 
-
         </div>
 
     </div>
 </div>
-
 
 
 <!-- Modal -->
@@ -138,11 +147,12 @@
 </div>
 
 
-
 <script src="../js/jquery-3.5.1.min.js"></script>
 <!-- Bootstrap JS -->
 
-<script src="../tabelas/tabelas.js"> </script>
+<script src="../auth/login/loginRequests.js"></script>
+
+<script src="../tabelas/tabelas.js"></script>
 
 <script src="tarefas.js" onload="getListaObjetos('https://escolarapp2.herokuapp.com/tarefas/','table')"></script>
 
@@ -151,6 +161,8 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
         integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
+
+<script src="https://kit.fontawesome.com/f8a986a436.js" crossorigin="anonymous"></script>
 
 
 </body>
