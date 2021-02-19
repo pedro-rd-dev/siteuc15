@@ -1,11 +1,11 @@
 var token = window.localStorage.getItem('Token')
 
-if(token != null){
+if (token != null) {
     console.log("token não é nulo")
-    window.location.href ="../../tarefas/tarefas.html"
-}else {
+    window.location.href = "../../tarefas/tarefas.html"
+} else {
     console.log("token nulo")
 
-    window.location.href ="../auth/login/login.html"
+    window.location.href = "auth/login/login.html"
 
 }

@@ -1,5 +1,6 @@
-function logarApi(email, password){
-    var usuario = JSON.stringify({email:email, password: password})
+function logarApi(email, password) {
+
+    var usuario = JSON.stringify({ email: email, password: password })
 
     $.ajax({
         url: "http://escolarapp2.herokuapp.com/account/login/",
@@ -8,7 +9,7 @@ function logarApi(email, password){
         method: 'POST',
         dataType: 'json',
         data: usuario,
-        success: function(objetoToken){
+        success: function(objetoToken) {
             console.log(objetoToken)
 
             /////////////////////ARMAZENAMENTO//////////////////////////
@@ -16,30 +17,27 @@ function logarApi(email, password){
             const key = "Token " + objetoToken.key;
 
             //SALVANDO O TOKEN NO LOCAL STORAGE DO NAVEGADOR
-            window.localStorage.setItem("Token",key);
+            window.localStorage.setItem("Token", key);
 
 
             objetotextoLogando.style.display = 'none';
             objetoTextoLogin.style.display = 'inline';
 
-            window.location.href ="../../tarefas/tarefas.html"
+            window.location.href = "../../tarefas/tarefas.html"
 
         },
-        error: function (error){
+        error: function(error) {
             var erros = JSON.parse(error.responseText)
 
             console.log(erros.non_field_errors[0])
 
-            objetoAlertaEmail.innerHTML  =erros.non_field_errors[0]
 
-            objetotextoLogando.style.display = 'none';
-            objetoTextoLogin.style.display = 'inline';
         }
     });
 }
 
-function  logoffApi(){
-    window.localStorage.removeItem("Token","");
+function logoffApi() {
+    window.localStorage.removeItem("Token", "");
     console.log("indo para index")
-    window.location.href ="/index.html"
+    window.location.href = "../index.html"
 }

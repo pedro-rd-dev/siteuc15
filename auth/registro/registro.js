@@ -12,17 +12,10 @@ function registrar() {
         console.log("senhas iguais")
         avisoSenhaRepetida.innerHTML = "";
 
+
+
     } else {
         console.log("senhas diferentes")
         avisoSenhaRepetida.innerHTML = "As senhas não coincidem!";
-    }
-
-    var retorno = validateEmail(email);
-
-    if (!retorno) {
-        emailInvalido.innerHTML = "Email invalido";
-    } else {
-        emailInvalido.innerHTML = "";
-
     }
 }
