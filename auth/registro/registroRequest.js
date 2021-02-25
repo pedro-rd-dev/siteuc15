@@ -3,6 +3,8 @@ function registrarApi(email, password) {
 
     var usuario = JSON.stringify({ email: email, password: password })
 
+    console.log(usuario)
+
     $.ajax({
         url: "http://escolarapp2.herokuapp.com/account/register/",
         contentType: 'application/json',

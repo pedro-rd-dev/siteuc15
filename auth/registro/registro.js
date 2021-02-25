@@ -12,7 +12,7 @@ function registrar() {
         console.log("senhas iguais")
         avisoSenhaRepetida.innerHTML = "";
 
-
+        registrarApi(email, primeiraSenha)
 
     } else {
         console.log("senhas diferentes")
