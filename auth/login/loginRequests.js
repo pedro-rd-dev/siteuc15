@@ -3,7 +3,7 @@ function logarApi(email, password) {
     var usuario = JSON.stringify({ email: email, password: password })
 
     $.ajax({
-        url: "http://escolarapp2.herokuapp.com/account/login/",
+        url: "https://escolarapp2.herokuapp.com/account/login/",
         contentType: 'application/json',
         cache: false,
         method: 'POST',

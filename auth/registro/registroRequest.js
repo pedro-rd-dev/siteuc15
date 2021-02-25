@@ -6,7 +6,7 @@ function registrarApi(email, password) {
     console.log(usuario)
 
     $.ajax({
-        url: "http://escolarapp2.herokuapp.com/account/register/",
+        url: "https://escolarapp2.herokuapp.com/account/register/",
         contentType: 'application/json',
         cache: false,
         method: 'POST',
