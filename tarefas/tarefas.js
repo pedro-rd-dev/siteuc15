@@ -6,12 +6,7 @@ if (token == null) {
     window.location.href = "../auth/login/login.html"
 
 
-} else {
-    console.log("token não é nulo")
-    window.location.href = "../tarefas/tarefas.html"
-
 }
-
 
 
 var url = "";
