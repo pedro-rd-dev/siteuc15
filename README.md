@@ -1,6 +1,7 @@
+## DESCRIÇÃO
 ESTA APLICAÇÃO RECEBE AS REQUISIÇÕES DO SITE ESCOLARAPP
 
-# INSTALAÇÃO
+## INSTALAÇÃO
 01-BAIXE O PROJETO (git clone {url})
 
 02-execute o comando : 
